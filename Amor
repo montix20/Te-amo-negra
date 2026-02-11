@@ -1,0 +1,77 @@
+index.html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Te amo negra</title>
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: radial-gradient(#ff5fa2, #8e0038);
+    font-family: Arial, sans-serif;
+}
+.card{
+    background:#fff0e6;
+    padding:30px;
+    border-radius:22px;
+    width:90%;
+    max-width:420px;
+    text-align:center;
+    box-shadow:0 0 25px rgba(0,0,0,.35);
+}
+.tree{
+    font-size:90px;
+}
+h2{
+    margin-bottom:10px;
+}
+.love{
+    font-size:1.4em;
+    font-weight:bold;
+    color:#b3005e;
+}
+.counter{
+    margin-top:15px;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+<div class="card">
+    <div class="tree">🌳❤️</div>
+    <h2>Para el amor de mi vida</h2>
+    <p>
+        Si pudiera elegir un lugar seguro,<br>
+        sería a tu lado.
+    </p>
+    <div class="love">Te amo, negra ❤️</div>
+    <div class="counter" id="contador"></div>
+</div>
+
+<script>
+const inicio = new Date();
+inicio.setDate(inicio.getDate() - 132);
+
+function actualizar(){
+    const ahora = new Date();
+    const diff = ahora - inicio;
+
+    const dias = Math.floor(diff / (1000*60*60*24));
+    const horas = Math.floor(diff / (1000*60*60)) % 24;
+    const minutos = Math.floor(diff / (1000*60)) % 60;
+    const segundos = Math.floor(diff / 1000) % 60;
+
+    document.getElementById("contador").innerHTML =
+    `Mi amor por vos comenzó hace<br>
+     ${dias} días ${horas} horas ${minutos} minutos ${segundos} segundos`;
+}
+setInterval(actualizar,1000);
+actualizar();
+</script>
+</body>
+</html>
